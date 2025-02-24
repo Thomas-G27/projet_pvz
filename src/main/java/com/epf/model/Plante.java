@@ -23,9 +23,18 @@ public class Plante {
         this.chemin_image = "data/img";
     }
 
-    public Plante (int id, String nom, int ){
-
+    public Plante (int id, String nom, int pdv, double attaque, int degat, int cout, double soleil, Effet effet, String chemin_img){
+        this.id_plante = id;
+        this.nom = nom ;
+        this.point_de_vie = pdv ;
+        this.attaque_par_seconde = attaque ;
+        this.degat_attaque = degat ;
+        this.cout = cout ;
+        this.soleil_par_seconde = soleil ;
+        this.effet = effet ;
+        this.chemin_image = chemin_img;
     }
+
     public int getIdPlante() {
         return this.id_plante;
     }

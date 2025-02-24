@@ -21,6 +21,8 @@ public class Zombie {
         this.chemin_image = "chemin/vers/image";
     }
 
+
+    
     public int getIdZombie() {
         return this.id_zombie;
     }
