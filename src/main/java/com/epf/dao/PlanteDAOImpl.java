@@ -20,7 +20,6 @@ public class PlanteDAOImpl implements PlanteDAO {
 
     private final RowMapper<Plante> planteRowMapper = (rs, rowNum) -> 
         new Plante(
-            rs.getInt("id_plante"),
             rs.getString("nom"),
             rs.getInt("point_de_vie"),
             rs.getDouble("attaque_par_seconde"),
