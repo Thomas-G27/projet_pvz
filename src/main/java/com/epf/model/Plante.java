@@ -34,40 +34,72 @@ public class Plante {
         this.chemin_image = chemin_img;
     }
 
-    public int getIdPlante() {
-        return this.id_plante;
+    public int getId_plante() {
+        return id_plante;
     }
-    
+
     public String getNom() {
-        return this.nom;
+        return nom;
     }
-    
-    public int getPointDeVie() {
-        return this.point_de_vie;
+
+    public int getPoint_de_vie() {
+        return point_de_vie;
     }
-    
-    public double getAttaqueParSeconde() {
-        return this.attaque_par_seconde;
+
+    public double getAttaque_par_seconde() {
+        return attaque_par_seconde;
     }
-    
-    public int getDegatAttaque() {
-        return this.degat_attaque;
+
+    public int getDegat_attaque() {
+        return degat_attaque;
     }
-    
+
     public int getCout() {
-        return this.cout;
+        return cout;
     }
-    
-    public double getSoleilParSeconde() {
-        return this.soleil_par_seconde;
+
+    public double getSoleil_par_seconde() {
+        return soleil_par_seconde;
     }
-    
+
     public Effet getEffet() {
-        return this.effet;
+        return effet;
     }
-    
-    public String getCheminImage() {
-        return this.chemin_image;
+
+    public String getChemin_image() {
+        return chemin_image;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPoint_de_vie(int point_de_vie) {
+        this.point_de_vie = point_de_vie;
+    }
+
+    public void setAttaque_par_seconde(double attaque_par_seconde) {
+        this.attaque_par_seconde = attaque_par_seconde;
+    }
+
+    public void setDegat_attaque(int degat_attaque) {
+        this.degat_attaque = degat_attaque;
+    }
+
+    public void setCout(int cout) {
+        this.cout = cout;
+    }
+
+    public void setSoleil_par_seconde(double soleil_par_seconde) {
+        this.soleil_par_seconde = soleil_par_seconde;
+    }
+
+    public void setEffet(Effet effet) {
+        this.effet = effet;
+    }
+
+    public void setChemin_image(String chemin_image) {
+        this.chemin_image = chemin_image;
     }
     
 }
