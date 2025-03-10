@@ -5,26 +5,32 @@ import java.util.List;
 import com.epf.dao.PlanteDAO;
 import com.epf.model.Plante;
 
-public class plante_Service {
+public class Plante_Service implements Plante_Service_interface {
 
     private final PlanteDAO planteDAO;
 
-    public plante_Service(PlanteDAO planteDAO) {
+    public Plante_Service(PlanteDAO planteDAO) {
         this.planteDAO = planteDAO;
     }
 
+    @Override
     public void ajouterPlante(Plante plante) {
         planteDAO.ajouterPlante(plante);
     }
 
-    public void suprimerPlante(int id) {
+    @Override
+    public void suprimerPlante(Plante plante) {
+        int id = plante.getId_plante();
         planteDAO.deletePlante(id);
     }
 
-    public Plante trouverPlante(int id) {
+    @Override
+    public Plante trouverPlante(Plante plante) {
+        int id = plante.getId_plante();
         return planteDAO.getPlanteById(id);
     }
 
+    @Override
     public List<Plante> listerPlantes() {
         return planteDAO.getAllPlantes();
     }
