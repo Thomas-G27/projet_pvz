@@ -19,7 +19,7 @@ public class Plante_Service implements Plante_Service_interface {
     }
 
     @Override
-    public void suprimerPlante(Plante plante) {
+    public void supprimerPlante(Plante plante) {
         int id = plante.getId_plante();
         planteDAO.deletePlante(id);
     }

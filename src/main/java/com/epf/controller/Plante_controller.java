@@ -21,7 +21,7 @@ public class Plante_controller {
 
     @DeleteMapping("/{id}")
     public void suprimerPlante (Plante plante){
-        this.planteService.suprimerPlante(plante);
+        this.planteService.supprimerPlante(plante);
     }
 
 }
