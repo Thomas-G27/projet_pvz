@@ -69,7 +69,8 @@ public class PlanteDAOImpl implements PlanteDAO {
             plante.getCout(),
             plante.getSoleil_par_seconde(),
             plante.getEffet().toString(), 
-            plante.getChemin_image()
+            plante.getChemin_image(),
+            plante.getId_plante()
         );
     }
     @Override
