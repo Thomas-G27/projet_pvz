@@ -20,7 +20,7 @@ public class Plante {
         this.cout = 10 ;
         this.soleil_par_seconde = 0.1 ;
         this.effet = Effet.NORMAL ;
-        this.chemin_image = "data/img";
+        this.chemin_image = "../img";
     }
 
     public Plante (String nom, int pdv, double attaque, int degat, int cout, double soleil, Effet effet, String chemin_img){
