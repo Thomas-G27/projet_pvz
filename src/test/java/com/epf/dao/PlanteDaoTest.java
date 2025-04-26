@@ -15,8 +15,9 @@ import static org.mockito.Mockito.when;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.epf.model.Effet;
-import com.epf.model.Plante;
+import com.coursEpfBack.dao.PlanteDAO;
+import com.coursEpfBack.model.Effet;
+import com.coursEpfBack.model.Plante;
 
 @ExtendWith(MockitoExtension.class)
 class PlanteDAOTest {
