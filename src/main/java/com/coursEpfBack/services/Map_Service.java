@@ -20,14 +20,12 @@ public class Map_Service implements Map_Service_interface {
     }
 
     @Override
-    public void supprimerMap(Map map) {
-        int id = map.getId_map();
+    public void supprimerMap(int id) {
         mapDAO.deleteMap(id);
     }
 
     @Override
-    public Map trouverMap(Map map) {
-        int id = map.getId_map();
+    public Map trouverMap(int id) {
         return mapDAO.getMapById(id);
     }
 
@@ -35,5 +33,9 @@ public class Map_Service implements Map_Service_interface {
     public List<Map> listerMaps() {
         return mapDAO.getAllMaps();
     }
-    
+
+    @Override
+    public void updateMap(int id, Map map) {
+        mapDAO.updateMap(id, map);
+    }
 }

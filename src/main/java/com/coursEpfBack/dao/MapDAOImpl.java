@@ -49,13 +49,13 @@ public class MapDAOImpl implements MapDAO {
     }
 
     @Override
-    public int updateMap(Map map) {
+    public int updateMap(int id, Map map) {
         String sql = "UPDATE map SET ligne = ?, colonne = ?, chemin_image = ? WHERE id_map = ?";
         return jdbcTemplate.update(sql, 
             map.getLigne(),
             map.getColonne(),
             map.getChemin_image(),
-            map.getId_map()
+            id
         );
     }
 

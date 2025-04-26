@@ -12,6 +12,7 @@ com\coursEpfBack\model\Zombie.class
 com\coursEpfBack\model\Effet.class
 com\coursEpfBack\services\Plante_Service_interface.class
 com\coursEpfBack\dao\ZombieDAO.class
+com\coursEpfBack\config\AppConfig.class
 com\coursEpfBack\model\Plante.class
 com\coursEpfBack\dao\MapDAO.class
 com\coursEpfBack\services\Plante_Service.class

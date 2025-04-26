@@ -8,7 +8,7 @@ public interface MapDAO {
     int ajouterMap(Map map);
     Map getMapById(int id);
     List<Map> getAllMaps();
-    int updateMap(Map map);
+    int updateMap(int id, Map map);
     int deleteMap(int id);
 
 }
