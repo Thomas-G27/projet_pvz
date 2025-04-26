@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.coursEpfBack.model.Plante;
 import com.coursEpfBack.services.Plante_Service;
 
-// Les DTO sont juste les objets renvoyés par les fonctions des controller, ce n'est pas une classe a part entière (je crois)
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/plantes")
 public class Plante_controller {

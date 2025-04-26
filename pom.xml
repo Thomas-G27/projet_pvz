@@ -15,7 +15,7 @@
     </properties>
 
     <dependencies>
-        <!-- Spring MVC (Version cohérente avec Spring 6) -->
+        <!-- Spring MVC -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -26,21 +26,14 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version>6.2.2</version> <!-- Mettre à jour à la version 6.2.2 -->
+            <version>6.2.2</version>
         </dependency>
 
         <!-- Database Driver (Exemple: MySQL Connector) -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.33</version> <!-- Dernière version stable -->
-        </dependency>
-
-        <!-- Jackson pour la manipulation de JSON -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.18.2</version>
+            <version>8.0.33</version>
         </dependency>
 
         <!-- Jakarta Servlet API compatible avec Spring 6 -->
@@ -57,6 +50,15 @@
             <version>1.5.16</version>
         </dependency>
 
+        <!-- Jackson pour la manipulation de JSON -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.18.2</version>
+        </dependency>
+
+
+        <!-- Non nécessaire initialement (dessous)-->
         <!-- Dépendances de test (JUnit et Mockito) -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -85,6 +87,7 @@
             <version>5.6.0</version>
             <scope>test</scope>
         </dependency>
+        <!-- Non nécessaire initialement (dessus)-->
 
     </dependencies>
 
