@@ -2,14 +2,15 @@ package com.coursEpfBack.services;
 
 import java.util.List;
 
-import com.coursEpfBack.dao.PlanteDAO;
+import com.coursEpfBack.dao.interfaces.Plante_DAO_interface;
 import com.coursEpfBack.model.Plante;
+import com.coursEpfBack.services.interfaces.Plante_Service_interface;
 
 public class Plante_Service implements Plante_Service_interface {
 
-    private final PlanteDAO planteDAO;
+    private final Plante_DAO_interface planteDAO;
 
-    public Plante_Service(PlanteDAO planteDAO) {
+    public Plante_Service(Plante_DAO_interface planteDAO) {
         this.planteDAO = planteDAO;
     }
 

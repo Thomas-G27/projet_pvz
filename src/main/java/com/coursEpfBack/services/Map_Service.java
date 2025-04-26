@@ -2,14 +2,15 @@ package com.coursEpfBack.services;
 
 import java.util.List;
 
-import com.coursEpfBack.dao.MapDAO;
+import com.coursEpfBack.dao.interfaces.Map_DAO_interface;
 import com.coursEpfBack.model.Map;
+import com.coursEpfBack.services.interfaces.Map_Service_interface;
 
 public class Map_Service implements Map_Service_interface {
 
-    private final MapDAO mapDAO;
+    private final Map_DAO_interface mapDAO;
 
-    public Map_Service(MapDAO mapDAO) {
+    public Map_Service(Map_DAO_interface mapDAO) {
         this.mapDAO = mapDAO;
     }
 
