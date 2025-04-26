@@ -2,14 +2,10 @@ package com.coursEpfBack.services.interfaces;
 
 import java.util.List;
 
-import com.coursEpfBack.model.Plante;
+import com.coursEpfBack.dto.Plante_DTO;
 
 public interface Plante_Service_interface {
 
-    public void ajouterPlante(Plante plante);
-    public void supprimerPlante(Plante plante);
-    public Plante trouverPlante(Plante plante);
-    public List<Plante> listerPlantes();
-    public void updatePlante(Plante plante);
+    public List<Plante_DTO> listerPlantes();
 
 }

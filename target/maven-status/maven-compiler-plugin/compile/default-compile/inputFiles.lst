@@ -10,6 +10,9 @@ C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\coursEpfBack\dao\Map_DAO.j
 C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\coursEpfBack\dao\Plante_DAO.java
 C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\coursEpfBack\dao\Zombie_DAO.java
 C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\coursEpfBack\dto\Map_DTO.java
+C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\coursEpfBack\dto\mapper\Map_Mapper.java
+C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\coursEpfBack\dto\mapper\Plante_Mapper.java
+C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\coursEpfBack\dto\mapper\Zombie_Mapper.java
 C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\coursEpfBack\dto\Plante_DTO.java
 C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\coursEpfBack\dto\Zombie_DTO.java
 C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\coursEpfBack\MainApp.java

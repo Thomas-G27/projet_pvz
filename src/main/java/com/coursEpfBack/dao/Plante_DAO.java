@@ -21,6 +21,7 @@ public class Plante_DAO implements Plante_DAO_interface {
 
     private final RowMapper<Plante> planteRowMapper = (rs, rowNum) -> 
         new Plante(
+            rs.getInt("id_plante"),
             rs.getString("nom"),
             rs.getInt("point_de_vie"),
             rs.getDouble("attaque_par_seconde"),
@@ -32,51 +33,9 @@ public class Plante_DAO implements Plante_DAO_interface {
         );
 
     @Override
-    public int ajouterPlante(Plante plante) {
-        String sql = "INSERT INTO plante (nom, point_de_vie, attaque_par_seconde, degat_attaque, cout, soleil_par_seconde, effet, chemin_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        return jdbcTemplate.update(sql, 
-            plante.getNom(),
-            plante.getPoint_de_vie(),
-            plante.getAttaque_par_seconde(),
-            plante.getDegat_attaque(),
-            plante.getCout(),
-            plante.getSoleil_par_seconde(),
-            plante.getEffet().toString(), 
-            plante.getChemin_image()
-        );
-    }
-
-    @Override
-    public Plante getPlanteById(int id) {
-        String sql = "SELECT * FROM plante WHERE id_plante = ?";
-        return jdbcTemplate.queryForObject(sql, planteRowMapper, id);
-    }
-
-    @Override
     public List<Plante> getAllPlantes() {
         String sql = "SELECT * FROM plante";
         return jdbcTemplate.query(sql, planteRowMapper);
     }
 
-    @Override
-    public int updatePlante(Plante plante) {
-        String sql = "UPDATE plante SET nom = ?, point_de_vie = ?, attaque_par_seconde = ?, degat_attaque = ?, cout = ?, soleil_par_seconde = ?, effet = ?, chemin_image = ? WHERE id_plante = ?";
-        return jdbcTemplate.update(sql, 
-            plante.getNom(),
-            plante.getPoint_de_vie(),
-            plante.getAttaque_par_seconde(),
-            plante.getDegat_attaque(),
-            plante.getCout(),
-            plante.getSoleil_par_seconde(),
-            plante.getEffet().toString(), 
-            plante.getChemin_image(),
-            plante.getId_plante()
-        );
-    }
-    @Override
-    public int deletePlante (int id){
-        String sql = "DELETE plante WHERE id_plante = ?";
-        
-        return jdbcTemplate.update(sql, id);
-    }
 }

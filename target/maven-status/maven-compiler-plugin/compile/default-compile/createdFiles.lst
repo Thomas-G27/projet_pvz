@@ -13,6 +13,7 @@ com\coursEpfBack\dao\interfaces\Map_DAO_interface.class
 com\coursEpfBack\dao\Map_DAO.class
 com\coursEpfBack\dto\Plante_DTO.class
 com\coursEpfBack\MainApp.class
+com\coursEpfBack\dto\mapper\Map_Mapper.class
 com\coursEpfBack\model\Map.class
 com\coursEpfBack\services\interfaces\Plante_Service_interface.class
 com\coursEpfBack\controller\Zombie_controller.class
@@ -22,4 +23,6 @@ com\coursEpfBack\dto\Zombie_DTO.class
 com\coursEpfBack\config\DatabaseConfig.class
 com\coursEpfBack\services\interfaces\Zombie_Service_interface.class
 com\coursEpfBack\services\Plante_Service.class
+com\coursEpfBack\dto\mapper\Zombie_Mapper.class
+com\coursEpfBack\dto\mapper\Plante_Mapper.class
 com\coursEpfBack\services\Zombie_Service.class

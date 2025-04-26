@@ -1,43 +1,31 @@
 package com.coursEpfBack.services;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.coursEpfBack.dao.interfaces.Plante_DAO_interface;
-import com.coursEpfBack.model.Plante;
+import com.coursEpfBack.dto.Plante_DTO;
+import com.coursEpfBack.dto.mapper.Plante_Mapper;
 import com.coursEpfBack.services.interfaces.Plante_Service_interface;
 
+@Service
 public class Plante_Service implements Plante_Service_interface {
 
     private final Plante_DAO_interface planteDAO;
 
+    @Autowired
     public Plante_Service(Plante_DAO_interface planteDAO) {
         this.planteDAO = planteDAO;
     }
 
     @Override
-    public void ajouterPlante(Plante plante) {
-        planteDAO.ajouterPlante(plante);
-    }
-
-    @Override
-    public void supprimerPlante(Plante plante) {
-        int id = plante.getId_plante();
-        planteDAO.deletePlante(id);
-    }
-
-    @Override
-    public Plante trouverPlante(Plante plante) {
-        int id = plante.getId_plante();
-        return planteDAO.getPlanteById(id);
-    }
-
-    @Override
-    public List<Plante> listerPlantes() {
-        return planteDAO.getAllPlantes();
-    }
-
-    @Override
-    public void updatePlante(Plante plante) {
-        planteDAO.updatePlante(plante);
+    public List<Plante_DTO> listerPlantes() {
+        return planteDAO.getAllPlantes()
+                        .stream()
+                        .map(Plante_Mapper::toDTO)
+                        .collect(Collectors.toList());
     }
 }
