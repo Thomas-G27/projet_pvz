@@ -34,4 +34,9 @@ public class Plante_Service implements Plante_Service_interface {
     public List<Plante> listerPlantes() {
         return planteDAO.getAllPlantes();
     }
+
+    @Override
+    public void updatePlante(Plante plante) {
+        planteDAO.updatePlante(plante);
+    }
 }

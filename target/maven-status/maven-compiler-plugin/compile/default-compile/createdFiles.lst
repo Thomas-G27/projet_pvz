@@ -4,7 +4,6 @@ com\coursEpfBack\model\Map.class
 com\coursEpfBack\controller\Map_controller.class
 com\coursEpfBack\controller\Zombie_controller.class
 com\coursEpfBack\services\Map_Service_interface.class
-com\coursEpfBack\ConfigBDD.class
 com\coursEpfBack\services\Map_Service.class
 com\coursEpfBack\dao\MapDAOImpl.class
 com\coursEpfBack\controller\Plante_controller.class

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 import com.coursEpfBack.model.Map;
@@ -35,7 +36,7 @@ public class Map_controller {
     public void supprimerMap(int id) {
         this.mapService.supprimerMap(id);
     }
-    @PostMapping("")
+    @PutMapping("/{id}")
     public void updateMap(int id, Map map) {
         this.mapService.updateMap(id, map);
     }

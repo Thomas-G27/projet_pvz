@@ -10,5 +10,6 @@ public interface Plante_Service_interface {
     public void supprimerPlante(Plante plante);
     public Plante trouverPlante(Plante plante);
     public List<Plante> listerPlantes();
+    public void updatePlante(Plante plante);
 
 }

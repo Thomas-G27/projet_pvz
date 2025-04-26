@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -16,18 +15,18 @@
     </properties>
 
     <dependencies>
-        <!-- Spring MVC -->
+        <!-- Spring MVC (Version cohérente avec Spring 6) -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>6.2.2</version>
+            <version>6.2.2</version> <!-- Assurez-vous que toutes les dépendances Spring sont à cette version -->
         </dependency>
 
         <!-- Spring JDBC Template -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version> 6.1.13</version>
+            <version>6.2.2</version> <!-- Mettre à jour à la version 6.2.2 -->
         </dependency>
 
         <!-- Database Driver (Exemple: MySQL Connector) -->
@@ -41,24 +40,24 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version> 2.18.2</version>
+            <version>2.18.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+        <!-- Jakarta Servlet API compatible avec Spring 6 -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
-            <version>6.1.0</version>
+            <version>6.0.0</version> <!-- Assurez-vous que la version est compatible avec Jakarta EE -->
         </dependency>
-
 
         <!-- Logging (optionnel, mais recommandé) -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version> 1.5.16</version>
+            <version>1.5.16</version>
         </dependency>
-        
+
+        <!-- Dépendances de test (JUnit et Mockito) -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
