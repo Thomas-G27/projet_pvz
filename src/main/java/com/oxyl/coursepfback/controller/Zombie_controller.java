@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -54,6 +53,15 @@ public class Zombie_controller {
     @GetMapping("")
     public List<Zombie_DTO> getAllZombies (){
         return this.zombieService.listerZombies();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Zombie_DTO> getZombieById(@PathVariable("id") int id) {
+        Zombie_DTO zombie_dto = this.zombieService.trouverZombieParId(id);
+        if (zombie_dto == null) {
+            return ResponseEntity.notFound().build(); // HTTP 404
+        }
+        return ResponseEntity.ok(zombie_dto); // HTTP 200
     }
 
     @PostMapping("")

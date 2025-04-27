@@ -5,12 +5,11 @@ import java.util.List;
 import com.oxyl.coursepfback.model.Map;
 
 public interface Map_DAO_interface {
-    List<Map> getAllMaps();
-    int ajouterMap(Map map);
-    int modifierMap(int id, Map map);
-    int supprimerMap(int id);
-
-    
-    Map getMapById(int id);
+    // CRUD operations for Map
+    List<Map> getAllMaps();             //Read
+    Map getMapById(int id);             //Read
+    int ajouterMap(Map map);            //Create
+    int modifierMap(int id, Map map);   //Update
+    int supprimerMap(int id);           //Delete
 
 }

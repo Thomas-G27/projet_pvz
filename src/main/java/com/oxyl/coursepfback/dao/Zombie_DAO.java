@@ -39,7 +39,13 @@ public class Zombie_DAO implements Zombie_DAO_interface {
         String sql = "SELECT * FROM zombie";
         return jdbcTemplate.query(sql, zombieRowMapper);
     }
-    
+
+    @Override
+    public Zombie getZombieById(int id) {
+        String sql = "SELECT * FROM zombie WHERE id_zombie = ?";
+        return jdbcTemplate.queryForObject(sql, zombieRowMapper, id);
+    }
+
     @Override
     public int ajouterZombie(Zombie zombie) {
         String sql = "INSERT INTO zombie (nom, point_de_vie, attaque_par_seconde, degat_attaque, vitesse_de_deplacement, chemin_image, id_map) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -84,13 +90,4 @@ public class Zombie_DAO implements Zombie_DAO_interface {
         String sql = "DELETE FROM zombie WHERE id_map = ?";
         return jdbcTemplate.update(sql, id_map);
     }
-///////////////////////////////////////////////////////////////////////////////////
-    @Override
-    public Zombie getZombieById(int id) {
-        String sql = "SELECT * FROM zombie WHERE id_zombie = ?";
-        return jdbcTemplate.queryForObject(sql, zombieRowMapper, id);
-    }
-
-    
-
 }

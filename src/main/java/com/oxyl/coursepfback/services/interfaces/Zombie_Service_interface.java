@@ -11,6 +11,6 @@ public interface Zombie_Service_interface {
     Zombie_DTO modifierZombie(int id, Zombie_DTO zombie_dto);
     void supprimerZombie(int id);
     void supprimerZombieParMap(int id_map);
-    // public Zombie trouverParId(Zombie zombie);
+    Zombie_DTO trouverZombieParId(int id);
     
 }

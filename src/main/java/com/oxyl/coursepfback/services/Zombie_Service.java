@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.oxyl.coursepfback.dao.interfaces.Zombie_DAO_interface;
 import com.oxyl.coursepfback.dto.Zombie_DTO;
-import com.oxyl.coursepfback.model.Zombie;
 import com.oxyl.coursepfback.dto.mapper.Zombie_Mapper;
 import com.oxyl.coursepfback.services.interfaces.Zombie_Service_interface;
 
@@ -55,10 +54,9 @@ public class Zombie_Service implements Zombie_Service_interface{
         zombieDAO.supprimerZombieParIdMap(id_map);
     }
 
-    // @Override
-    // public Zombie trouverParId(Zombie zombie) {
-    //     int id = zombie.getId_zombie();
-    //     return zombieDAO.getZombieById(id);
-    // }
+    @Override
+    public Zombie_DTO trouverZombieParId(int id) {
+        return Zombie_Mapper.toDTO(zombieDAO.getZombieById(id));
+    }
 
 }

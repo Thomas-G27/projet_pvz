@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.oxyl.coursepfback.dao.interfaces.Map_DAO_interface;
 import com.oxyl.coursepfback.dao.interfaces.Zombie_DAO_interface;
-import com.oxyl.coursepfback.model.Map;
 import com.oxyl.coursepfback.services.interfaces.Map_Service_interface;
 import com.oxyl.coursepfback.dto.Map_DTO;
 import com.oxyl.coursepfback.dto.mapper.Map_Mapper;
@@ -33,6 +32,11 @@ public class Map_Service implements Map_Service_interface {
     }
 
     @Override
+    public Map_DTO trouverMapParId(int id) {
+        return Map_Mapper.toDTO(mapDAO.getMapById(id));
+    }
+    
+    @Override
     public Map_DTO ajouterMap(Map_DTO map_dto) {
         int id = mapDAO.ajouterMap(Map_Mapper.toEntity(map_dto));
         map_dto.setId_map(id);
@@ -55,11 +59,4 @@ public class Map_Service implements Map_Service_interface {
         // Supprimer la map ensuite
         mapDAO.supprimerMap(id);
     }
-
-    // @Override
-    // public Map_DTO trouverMap(int id) {
-    //     return mapDAO.getMapById(id);
-    // }
-
-    
 }

@@ -42,6 +42,12 @@ public class Plante_DAO implements Plante_DAO_interface {
     }
 
     @Override
+    public Plante getPlanteById(int id) {
+        String sql = "SELECT * FROM plante WHERE id_plante = ?";
+        return jdbcTemplate.queryForObject(sql, planteRowMapper, id);
+    }
+
+    @Override
     public int ajouterPlante(Plante plante) {
         String sql = "INSERT INTO plante (nom, point_de_vie, attaque_par_seconde, degat_attaque, cout, soleil_par_seconde, effet, chemin_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         KeyHolder keyHolder = new GeneratedKeyHolder();

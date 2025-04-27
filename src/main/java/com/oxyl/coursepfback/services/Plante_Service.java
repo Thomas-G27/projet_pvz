@@ -30,6 +30,11 @@ public class Plante_Service implements Plante_Service_interface {
     }
 
     @Override
+    public Plante_DTO trouverPlanteParId(int id) {
+        return Plante_Mapper.toDTO(planteDAO.getPlanteById(id));
+    }
+    
+    @Override
     public Plante_DTO ajouterPlante(Plante_DTO plante_dto) {
         int id = planteDAO.ajouterPlante(Plante_Mapper.toEntity(plante_dto));
         plante_dto.setId(id);

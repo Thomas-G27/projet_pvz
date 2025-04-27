@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 
-import com.oxyl.coursepfback.model.Map;
 import com.oxyl.coursepfback.dto.Map_DTO;
 import com.oxyl.coursepfback.services.Map_Service;
 
@@ -48,6 +47,14 @@ public class Map_controller {
     @GetMapping("")
     public List<Map_DTO> getallMap() {
         return this.mapService.listerMaps();
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Map_DTO> getMapById(@PathVariable("id") int id) {
+        Map_DTO map_dto = this.mapService.trouverMapParId(id);
+        if (map_dto == null) {
+            return ResponseEntity.notFound().build(); // HTTP 404
+        }
+        return ResponseEntity.ok(map_dto); // HTTP 200
     }
 
     @PostMapping("")
