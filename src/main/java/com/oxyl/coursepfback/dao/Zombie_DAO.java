@@ -1,0 +1,79 @@
+package com.oxyl.coursepfback.dao;
+
+import java.util.List;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import com.oxyl.coursepfback.dao.interfaces.Zombie_DAO_interface;
+import com.oxyl.coursepfback.model.Zombie;
+
+@Repository
+public class Zombie_DAO implements Zombie_DAO_interface {
+
+    private final JdbcTemplate jdbcTemplate;
+
+    public Zombie_DAO(JdbcTemplate jdbcTemplate) {   
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    private final RowMapper<Zombie> zombieRowMapper = (rs, rowNum) -> 
+        new Zombie(
+            rs.getInt("id_zombie"),
+            rs.getString("nom"),
+            rs.getInt("point_de_vie"),
+            rs.getDouble("attaque_par_seconde"),
+            rs.getInt("degat_attaque"),
+            rs.getDouble("vitesse_de_deplacement"),
+            rs.getString("chemin_image"),
+            rs.getInt("id_map")
+        );
+
+    @Override
+    public int ajouterZombie(Zombie zombie) {
+        String sql = "INSERT INTO zombie (nom, point_de_vie, attaque_par_seconde, degat_attaque, vitesse_de_deplacement, chemin_image, id_map) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        return jdbcTemplate.update(sql, 
+            zombie.getNom(),
+            zombie.getPoint_de_vie(),
+            zombie.getAttaque_par_seconde(),
+            zombie.getDegat_attaque(),
+            zombie.getVitesse_de_deplacement(),
+            zombie.getChemin_image(),
+            zombie.getId_map()
+        );
+    }
+
+    @Override
+    public Zombie getZombieById(int id) {
+        String sql = "SELECT * FROM zombie WHERE id_zombie = ?";
+        return jdbcTemplate.queryForObject(sql, zombieRowMapper, id);
+    }
+
+    @Override
+    public List<Zombie> getAllZombies() {
+        String sql = "SELECT * FROM zombie";
+        return jdbcTemplate.query(sql, zombieRowMapper);
+    }
+    
+    @Override
+    public int updateZombie(Zombie zombie) {
+        String sql = "UPDATE zombie SET nom = ?, point_de_vie = ?, attaque_par_seconde = ?, degat_attaque = ?, vitesse_de_deplacement = ?, chemin_image = ?, id_map = ? WHERE id_zombie = ?";
+        return jdbcTemplate.update(sql, 
+            zombie.getNom(),
+            zombie.getPoint_de_vie(),
+            zombie.getAttaque_par_seconde(),
+            zombie.getDegat_attaque(),
+            zombie.getVitesse_de_deplacement(),
+            zombie.getChemin_image(),
+            zombie.getId_map(),
+            zombie.getId_zombie()
+        );
+    }
+
+    @Override
+    public int deleteZombie(int id) {
+        String sql = "DELETE FROM zombie WHERE id_zombie = ?";
+        return jdbcTemplate.update(sql, id);
+    }
+}

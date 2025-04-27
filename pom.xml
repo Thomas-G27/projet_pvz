@@ -44,11 +44,11 @@
         </dependency>
 
         <!-- Logging (optionnel, mais recommandé) -->
-        <dependency>
+        <!-- <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.5.16</version>
-        </dependency>
+            <version>1.4.14</version>   
+        </dependency> -->
 
         <!-- Jackson pour la manipulation de JSON -->
         <dependency>
@@ -96,7 +96,7 @@
     </dependencies>
 
     <build>
-        <finalName>CoursEpfBack</finalName>
+        <finalName>coursepfback</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
