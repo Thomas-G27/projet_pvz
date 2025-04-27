@@ -5,7 +5,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -60,6 +62,12 @@ public class Plante_controller {
     public ResponseEntity<Plante_DTO> ajouterPlante (@RequestBody Plante_DTO plante_dto){
         Plante_DTO New_Plante = this.planteService.ajouterPlante(plante_dto);
         return ResponseEntity.ok(New_Plante); // HTTP 200
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Plante_DTO> modifierPlante (@PathVariable("id") int id, @RequestBody Plante_DTO plante_dto){
+        Plante_DTO updatedPlante = this.planteService.modifierPlante(id, plante_dto);
+        return ResponseEntity.ok(updatedPlante); // HTTP 200
     }
 
 }

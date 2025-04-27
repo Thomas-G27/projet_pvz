@@ -59,4 +59,20 @@ public class Plante_DAO implements Plante_DAO_interface {
         }, keyHolder);
         return keyHolder.getKey().intValue();   // Retourne l'ID généré
     }
+
+    @Override
+    public int modifierPlante(int id, Plante plante) {
+        String sql = "UPDATE plante SET nom = ?, point_de_vie = ?, attaque_par_seconde = ?, degat_attaque = ?, cout = ?, soleil_par_seconde = ?, effet = ?, chemin_image = ? WHERE id_plante = ?";
+        return jdbcTemplate.update(sql, 
+            plante.getNom(), 
+            plante.getPoint_de_vie(), 
+            plante.getAttaque_par_seconde(), 
+            plante.getDegat_attaque(), 
+            plante.getCout(), 
+            plante.getSoleil_par_seconde(), 
+            plante.getEffet(), 
+            plante.getChemin_image(), 
+            id
+        );
+    }
 }

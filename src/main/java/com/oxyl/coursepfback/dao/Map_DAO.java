@@ -51,14 +51,7 @@ public class Map_DAO implements Map_DAO_interface {
     }
 
     @Override
-    public Map getMapById(int id) {
-        String sql = "SELECT * FROM map WHERE id_map = ?";
-        return jdbcTemplate.queryForObject(sql, mapRowMapper, id);
-    }
-
-
-    @Override
-    public int updateMap(int id, Map map) {
+    public int modifierMap(int id, Map map) {
         String sql = "UPDATE map SET ligne = ?, colonne = ?, chemin_image = ? WHERE id_map = ?";
         return jdbcTemplate.update(sql, 
             map.getLigne(),
@@ -67,6 +60,14 @@ public class Map_DAO implements Map_DAO_interface {
             id
         );
     }
+
+
+    @Override
+    public Map getMapById(int id) {
+        String sql = "SELECT * FROM map WHERE id_map = ?";
+        return jdbcTemplate.queryForObject(sql, mapRowMapper, id);
+    }
+
 
     @Override
     public int deleteMap(int id) {

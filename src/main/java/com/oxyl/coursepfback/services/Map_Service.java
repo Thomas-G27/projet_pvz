@@ -36,7 +36,14 @@ public class Map_Service implements Map_Service_interface {
         return map_dto; 
     }
 
-
+    @Override
+    public Map_DTO modifierMap(int id, Map_DTO map_dto) {
+        int modif = mapDAO.modifierMap(id, Map_Mapper.toEntity(map_dto));
+        if (modif == 0) {
+            return null; 
+        }
+        return map_dto;
+    }
     
     @Override
     public void supprimerMap(int id) {
@@ -48,8 +55,5 @@ public class Map_Service implements Map_Service_interface {
         return mapDAO.getMapById(id);
     }
 
-    @Override
-    public void updateMap(int id, Map map) {
-        mapDAO.updateMap(id, map);
-    }
+    
 }

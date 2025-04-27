@@ -35,4 +35,13 @@ public class Plante_Service implements Plante_Service_interface {
         plante_dto.setId(id);
         return plante_dto;
     }
+
+    @Override
+    public Plante_DTO modifierPlante(int id, Plante_DTO plante_dto) {
+        int modif = planteDAO.modifierPlante(id, Plante_Mapper.toEntity(plante_dto));
+        if (modif == 0) {
+            return null; 
+        }
+        return plante_dto;
+    }
 }
