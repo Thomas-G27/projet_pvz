@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.oxyl.coursepfback.dto.Map_DTO;
 import com.oxyl.coursepfback.services.Map_Service;
@@ -64,11 +65,8 @@ public class Map_controller {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Map_DTO> modifierMap(@PathVariable("id") int id, Map_DTO map_dto) {
+    public ResponseEntity<Map_DTO> modifierMap(@PathVariable("id") int id, @RequestBody Map_DTO map_dto) {
         Map_DTO modif = this.mapService.modifierMap(id, map_dto);
-        if (modif == null) {
-            return ResponseEntity.notFound().build(); // HTTP 404
-        }
         return ResponseEntity.ok(modif); // HTTP 200
     }
     @DeleteMapping("/{id}")
