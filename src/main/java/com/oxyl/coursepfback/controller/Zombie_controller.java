@@ -15,7 +15,6 @@ import com.oxyl.coursepfback.services.ZombieService;
 
 import java.util.List;
 
-import com.oxyl.coursepfback.dto.Plante_DTO;
 
 
 @RequestMapping("/zombies")

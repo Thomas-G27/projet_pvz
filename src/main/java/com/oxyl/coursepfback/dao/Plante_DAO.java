@@ -44,7 +44,6 @@ public class Plante_DAO implements Plante_DAO_interface {
     @Override
     public int ajouterPlante(Plante plante) {
         String sql = "INSERT INTO plante (nom, point_de_vie, attaque_par_seconde, degat_attaque, cout, soleil_par_seconde, effet, chemin_image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(connection -> {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -58,6 +57,6 @@ public class Plante_DAO implements Plante_DAO_interface {
             ps.setString(8, plante.getChemin_image());
             return ps;
         }, keyHolder);
-        return keyHolder.getKey().intValue();
+        return keyHolder.getKey().intValue();   // Retourne l'ID généré
     }
 }

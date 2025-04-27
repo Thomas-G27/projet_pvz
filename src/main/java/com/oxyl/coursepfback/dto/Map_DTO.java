@@ -16,6 +16,11 @@ public class Map_DTO {
         this.colonne = colonne;
         this.chemin_image = chemin_image;
     }
+    public Map_DTO(int ligne, int colonne, String chemin_image) {
+        this.ligne = ligne;
+        this.colonne = colonne;
+        this.chemin_image = chemin_image;
+    }
 
     //getters
     public int getId_map() {

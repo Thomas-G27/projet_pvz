@@ -58,8 +58,8 @@ public class Plante_controller {
 
     @PostMapping("")
     public ResponseEntity<Plante_DTO> ajouterPlante (@RequestBody Plante_DTO plante_dto){
-        Plante_DTO Nouvelle_Plante = this.planteService.ajouterPlante(plante_dto);
-        return ResponseEntity.ok(Nouvelle_Plante);  // HTTP 200
+        Plante_DTO New_Plante = this.planteService.ajouterPlante(plante_dto);
+        return ResponseEntity.ok(New_Plante); // HTTP 200
     }
 
 }

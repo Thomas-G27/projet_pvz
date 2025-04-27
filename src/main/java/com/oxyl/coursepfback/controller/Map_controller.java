@@ -49,17 +49,18 @@ public class Map_controller {
         return this.mapService.listerMaps();
     }
 
-    // @PostMapping("")
-    // public void ajouterMap(Map map) {
-    //     this.mapService.ajouterMap(map);
-    // }
+    @PostMapping("")
+    public ResponseEntity<Map_DTO> ajouterMap(Map_DTO map_dto) {
+        Map_DTO New_Map = this.mapService.ajouterMap(map_dto);
+        return ResponseEntity.ok(New_Map); // HTTP 200
+    }
 
-    // @DeleteMapping("/{id}")
-    // public void supprimerMap(int id) {
-    //     this.mapService.supprimerMap(id);
-    // }
     // @PutMapping("/{id}")
     // public void updateMap(int id, Map map) {
     //     this.mapService.updateMap(id, map);
+    // }
+    // @DeleteMapping("/{id}")
+    // public void supprimerMap(int id) {
+    //     this.mapService.supprimerMap(id);
     // }
 }

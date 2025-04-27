@@ -30,11 +30,14 @@ public class Map_Service implements Map_Service_interface {
     }
 
     @Override
-    public void ajouterMap(Map map) {
-        mapDAO.ajouterMap(map);
-        
+    public Map_DTO ajouterMap(Map_DTO map_dto) {
+        int id = mapDAO.ajouterMap(Map_Mapper.toEntity(map_dto));
+        map_dto.setId_map(id);
+        return map_dto; 
     }
 
+
+    
     @Override
     public void supprimerMap(int id) {
         mapDAO.deleteMap(id);
