@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.oxyl.coursepfback.dao.interfaces.Zombie_DAO_interface;
 import com.oxyl.coursepfback.dto.Zombie_DTO;
+import com.oxyl.coursepfback.model.Zombie;
 import com.oxyl.coursepfback.dto.mapper.Zombie_Mapper;
 import com.oxyl.coursepfback.services.interfaces.Zombie_Service_interface;
 
@@ -28,11 +30,12 @@ public class ZombieService implements Zombie_Service_interface{
                         .toList();
     }
 
-    // @Override
-    // public void ajouterZombie(Zombie zombie) {
-    //     // potentiellement ajouter des vérifications avant d'appeler le DAO
-    //     zombieDAO.ajouterZombie(zombie);
-    // }
+    @Override
+    public Zombie_DTO ajouterZombie(@RequestBody Zombie_DTO zombie_dto) {
+        int id = zombieDAO.ajouterZombie(Zombie_Mapper.toEntity(zombie_dto));
+        zombie_dto.setId_zombie(id);
+        return zombie_dto;
+    }
 
     // @Override
     // public void supprimerZombie(Zombie zombie) {

@@ -12,9 +12,18 @@ public class Zombie {
     private String chemin_image;
     private int id_map; // Id de la map associée
 
-    //constructeur
+    //constructeurs
     public Zombie (int id_zombie, String nom, int pdv, double attaque, int degat, double vitesse, String chemin_img, int id_map){
         this.id_zombie = id_zombie;
+        this.nom = nom ;
+        this.point_de_vie = pdv ;
+        this.attaque_par_seconde = attaque ;
+        this.degat_attaque = degat ;
+        this.vitesse_de_deplacement = vitesse ;
+        this.chemin_image = chemin_img;
+        this.id_map = id_map;
+    }
+    public Zombie (String nom, int pdv, double attaque, int degat, double vitesse, String chemin_img, int id_map){
         this.nom = nom ;
         this.point_de_vie = pdv ;
         this.attaque_par_seconde = attaque ;

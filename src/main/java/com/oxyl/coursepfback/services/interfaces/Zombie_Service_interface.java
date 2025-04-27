@@ -7,8 +7,8 @@ import com.oxyl.coursepfback.model.Zombie;
 
 public interface Zombie_Service_interface {
     
-    public List<Zombie_DTO> listerZombies();
-    // public void ajouterZombie(Zombie zombie);
+    List<Zombie_DTO> listerZombies();
+    Zombie_DTO ajouterZombie(Zombie_DTO zombie_dto);
     // public void supprimerZombie(Zombie zombie);
     // public Zombie trouverParId(Zombie zombie);
     

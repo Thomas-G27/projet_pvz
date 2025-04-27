@@ -1,5 +1,8 @@
 package com.oxyl.coursepfback.dto;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Plante_DTO {
     //attributs
     private int id;
@@ -13,17 +16,29 @@ public class Plante_DTO {
     private String chemin_image;
 
     //constructeur
-    public Plante_DTO(int id, String nom, int point_de_vie, double attaque_par_seconde, int degat_attaque, int cout, double soleil_par_seconde, String effet, String chemin_image) {
-        this.id = id;
-        this.nom = nom;
-        this.point_de_vie = point_de_vie;
-        this.attaque_par_seconde = attaque_par_seconde;
-        this.degat_attaque = degat_attaque;
-        this.cout = cout;
-        this.soleil_par_seconde = soleil_par_seconde;
-        this.effet = effet;
-        this.chemin_image = chemin_image;
+    public Plante_DTO() {
     }
+    @JsonCreator
+    public Plante_DTO(  @JsonProperty int id, 
+                        @JsonProperty String nom, 
+                        @JsonProperty int point_de_vie, 
+                        @JsonProperty double attaque_par_seconde, 
+                        @JsonProperty int degat_attaque, 
+                        @JsonProperty int cout, 
+                        @JsonProperty double soleil_par_seconde, 
+                        @JsonProperty String effet, 
+                        @JsonProperty String chemin_image) {
+                    this.id = id;
+                    this.nom = nom;
+                    this.point_de_vie = point_de_vie;
+                    this.attaque_par_seconde = attaque_par_seconde;
+                    this.degat_attaque = degat_attaque;
+                    this.cout = cout;
+                    this.soleil_par_seconde = soleil_par_seconde;
+                    this.effet = effet;
+                    this.chemin_image = chemin_image;
+    }
+    
     
     //getter
     public int getId() {

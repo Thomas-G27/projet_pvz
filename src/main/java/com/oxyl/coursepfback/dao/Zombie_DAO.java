@@ -5,6 +5,10 @@ import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 
 import com.oxyl.coursepfback.dao.interfaces.Zombie_DAO_interface;
 import com.oxyl.coursepfback.model.Zombie;
@@ -31,31 +35,36 @@ public class Zombie_DAO implements Zombie_DAO_interface {
         );
 
     @Override
-    public int ajouterZombie(Zombie zombie) {
-        String sql = "INSERT INTO zombie (nom, point_de_vie, attaque_par_seconde, degat_attaque, vitesse_de_deplacement, chemin_image, id_map) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        return jdbcTemplate.update(sql, 
-            zombie.getNom(),
-            zombie.getPoint_de_vie(),
-            zombie.getAttaque_par_seconde(),
-            zombie.getDegat_attaque(),
-            zombie.getVitesse_de_deplacement(),
-            zombie.getChemin_image(),
-            zombie.getId_map()
-        );
+    public List<Zombie> getAllZombies() {
+        String sql = "SELECT * FROM zombie";
+        return jdbcTemplate.query(sql, zombieRowMapper);
     }
-
+    
+    @Override
+    public int ajouterZombie(Zombie zombie) {
+        String sql = "INSERT INTO zombie (nom, point_de_vie, attaque_par_seconde, degat_attaque, vitesse_de_deplacement, chemin_image, id_map) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+        jdbcTemplate.update(connection -> {
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, zombie.getNom());
+            ps.setInt(2, zombie.getPoint_de_vie());
+            ps.setDouble(3, zombie.getAttaque_par_seconde());
+            ps.setInt(4, zombie.getDegat_attaque());
+            ps.setDouble(5, zombie.getVitesse_de_deplacement());
+            ps.setString(6, zombie.getChemin_image());
+            ps.setInt(7, zombie.getId_map());
+            return ps;
+        }, keyHolder);
+        
+        return keyHolder.getKey().intValue(); // Retourne l'ID généré
+    }
+///////////////////////////////////////////////////////////////////////////////////
     @Override
     public Zombie getZombieById(int id) {
         String sql = "SELECT * FROM zombie WHERE id_zombie = ?";
         return jdbcTemplate.queryForObject(sql, zombieRowMapper, id);
     }
 
-    @Override
-    public List<Zombie> getAllZombies() {
-        String sql = "SELECT * FROM zombie";
-        return jdbcTemplate.query(sql, zombieRowMapper);
-    }
-    
     @Override
     public int updateZombie(Zombie zombie) {
         String sql = "UPDATE zombie SET nom = ?, point_de_vie = ?, attaque_par_seconde = ?, degat_attaque = ?, vitesse_de_deplacement = ?, chemin_image = ?, id_map = ? WHERE id_zombie = ?";

@@ -6,4 +6,5 @@ import com.oxyl.coursepfback.model.Plante;
 
 public interface Plante_DAO_interface {
     List<Plante> getAllPlantes();
+    int ajouterPlante(Plante plante);
 }

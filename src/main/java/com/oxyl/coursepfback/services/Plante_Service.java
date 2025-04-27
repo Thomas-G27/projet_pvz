@@ -28,4 +28,11 @@ public class Plante_Service implements Plante_Service_interface {
                         .map(Plante_Mapper::toDTO)
                         .collect(Collectors.toList());
     }
+
+    @Override
+    public Plante_DTO ajouterPlante(Plante_DTO plante_dto) {
+        int id = planteDAO.ajouterPlante(Plante_Mapper.toEntity(plante_dto));
+        plante_dto.setId(id);
+        return plante_dto;
+    }
 }

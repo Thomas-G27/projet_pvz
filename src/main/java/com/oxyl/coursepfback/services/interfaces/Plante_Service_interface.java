@@ -6,6 +6,6 @@ import com.oxyl.coursepfback.dto.Plante_DTO;
 
 public interface Plante_Service_interface {
 
-    public List<Plante_DTO> listerPlantes();
-
+    List<Plante_DTO> listerPlantes();
+    Plante_DTO ajouterPlante(Plante_DTO plante_dto);
 }

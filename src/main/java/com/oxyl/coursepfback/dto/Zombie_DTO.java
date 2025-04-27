@@ -11,9 +11,20 @@ public class Zombie_DTO {
     private String chemin_image;
     private int id_map; // Id de la map associée
 
-    //constructeur
+    //constructeurs
+    public Zombie_DTO() {
+    }
     public Zombie_DTO(int id_zombie, String nom, int point_de_vie, double attaque_par_seconde, int degat_attaque, double vitesse_de_deplacement, String chemin_image, int id_map) {
         this.id_zombie = id_zombie;
+        this.nom = nom;
+        this.point_de_vie = point_de_vie;
+        this.attaque_par_seconde = attaque_par_seconde;
+        this.degat_attaque = degat_attaque;
+        this.vitesse_de_deplacement = vitesse_de_deplacement;
+        this.chemin_image = chemin_image;
+        this.id_map = id_map;
+    }
+    public Zombie_DTO(String nom, int point_de_vie, double attaque_par_seconde, int degat_attaque, double vitesse_de_deplacement, String chemin_image, int id_map) {
         this.nom = nom;
         this.point_de_vie = point_de_vie;
         this.attaque_par_seconde = attaque_par_seconde;
