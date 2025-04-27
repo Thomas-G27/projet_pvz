@@ -1,8 +1,10 @@
 com\oxyl\coursepfback\dao\Zombie_DAO.class
 com\oxyl\coursepfback\services\interfaces\Zombie_Service_interface.class
-com\oxyl\coursepfback\config\AppConfig.class
 com\oxyl\coursepfback\dto\Zombie_DTO.class
+com\oxyl\coursepfback\config\CorsConfig$1.class
+com\oxyl\coursepfback\config\CorsConfig.class
 com\oxyl\coursepfback\services\Plante_Service.class
+com\oxyl\coursepfback\controller\MapController.class
 com\oxyl\coursepfback\dto\mapper\Plante_Mapper.class
 com\oxyl\coursepfback\model\Map.class
 com\oxyl\coursepfback\dto\mapper\Zombie_Mapper.class
@@ -25,4 +27,3 @@ com\oxyl\coursepfback\model\Zombie.class
 com\oxyl\coursepfback\services\ZombieService.class
 com\oxyl\coursepfback\config\DatabaseConfig.class
 com\oxyl\coursepfback\dao\interfaces\Map_DAO_interface.class
-com\oxyl\coursepfback\controller\Map_controller.class

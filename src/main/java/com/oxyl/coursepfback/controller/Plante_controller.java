@@ -13,8 +13,8 @@ import com.oxyl.coursepfback.services.Plante_Service;
 import com.oxyl.coursepfback.services.interfaces.Plante_Service_interface;
 
 @CrossOrigin(origins = "*")
-@RestController
 @RequestMapping("/plantes")
+@RestController
 public class Plante_controller {
 
     private final Plante_Service_interface planteService;

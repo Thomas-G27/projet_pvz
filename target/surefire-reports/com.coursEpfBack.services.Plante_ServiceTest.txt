@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.coursEpfBack.services.Plante_ServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.497 s -- in com.coursEpfBack.services.Plante_ServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.589 s -- in com.coursEpfBack.services.Plante_ServiceTest

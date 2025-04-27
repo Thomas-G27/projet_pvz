@@ -96,7 +96,7 @@
     </dependencies>
 
     <build>
-        <finalName>coursepfback</finalName>
+        <finalName>CoursEpfBack</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -1,7 +1,7 @@
-C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\oxyl\coursepfback\config\AppConfig.java
+C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\oxyl\coursepfback\config\CorsConfig.java
 C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\oxyl\coursepfback\config\CorsFilter.java
 C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\oxyl\coursepfback\config\DatabaseConfig.java
-C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\oxyl\coursepfback\controller\Map_controller.java
+C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\oxyl\coursepfback\controller\MapController.java
 C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\oxyl\coursepfback\controller\Plante_controller.java
 C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\oxyl\coursepfback\controller\ZombieController.java
 C:\ecole\4A\Langage_Java\projet_pvz\src\main\java\com\oxyl\coursepfback\dao\interfaces\Map_DAO_interface.java

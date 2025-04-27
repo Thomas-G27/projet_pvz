@@ -1,6 +1,6 @@
 package com.oxyl.coursepfback.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,14 +13,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 
-// les DTO sont juste les objets renvoyés par les fonctions des controller, ce n'est pas une classe a part entière (je crois)
-@CrossOrigin(origins = "http://localhost:5173")
-@RestController
 @RequestMapping("/maps")
-public class Map_controller {
+@RestController
+public class MapController {
+
     private final Map_Service mapService;
 
-    public Map_controller(Map_Service mapServ) {
+    public MapController(Map_Service mapServ) {
         this.mapService = mapServ;
     }
 
@@ -29,17 +28,17 @@ public class Map_controller {
         return this.mapService.listerMaps();
     }
 
-    @PostMapping("")
-    public void ajouterMap(Map map) {
-        this.mapService.ajouterMap(map);
-    }
+    // @PostMapping("")
+    // public void ajouterMap(Map map) {
+    //     this.mapService.ajouterMap(map);
+    // }
 
-    @DeleteMapping("/{id}")
-    public void supprimerMap(int id) {
-        this.mapService.supprimerMap(id);
-    }
-    @PutMapping("/{id}")
-    public void updateMap(int id, Map map) {
-        this.mapService.updateMap(id, map);
-    }
+    // @DeleteMapping("/{id}")
+    // public void supprimerMap(int id) {
+    //     this.mapService.supprimerMap(id);
+    // }
+    // @PutMapping("/{id}")
+    // public void updateMap(int id, Map map) {
+    //     this.mapService.updateMap(id, map);
+    // }
 }

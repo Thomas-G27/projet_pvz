@@ -1,5 +1,6 @@
 package com.oxyl.coursepfback.model;
 
+
 public class Map {
     //attributs
     private int id_map;

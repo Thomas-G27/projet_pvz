@@ -2,10 +2,13 @@ package com.oxyl.coursepfback.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.oxyl.coursepfback.dao.interfaces.Map_DAO_interface;
 import com.oxyl.coursepfback.model.Map;
 import com.oxyl.coursepfback.services.interfaces.Map_Service_interface;
 
+@Service
 public class Map_Service implements Map_Service_interface {
 
     private final Map_DAO_interface mapDAO;

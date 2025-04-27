@@ -1,8 +1,6 @@
 package com.oxyl.coursepfback.model;
 
-import javax.persistence.Entity;
 
-@Entity
 public class Plante {
     //attributs
     private int id_plante;
