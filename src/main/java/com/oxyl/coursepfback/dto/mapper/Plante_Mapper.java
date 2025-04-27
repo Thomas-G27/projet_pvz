@@ -8,10 +8,6 @@ public class Plante_Mapper {
 
     // conversion Plante -> Plante_DTO
     public static Plante_DTO toDTO(Plante plante) {
-        if (plante == null) {
-            return null;
-        }
-
         Plante_DTO plante_dto = new Plante_DTO(
                 plante.getId(),
                 plante.getNom(),
@@ -28,10 +24,6 @@ public class Plante_Mapper {
 
     // conversion Plante_DTO -> Plante
     public static Plante toEntity(Plante_DTO plante_dto) {
-        if (plante_dto == null) {
-            return null;
-        }
-
         Plante plante = new Plante(
                 plante_dto.getId(),
                 plante_dto.getNom(),
@@ -41,7 +33,7 @@ public class Plante_Mapper {
                 plante_dto.getCout(),
                 plante_dto.getSoleil_par_seconde(),
                 plante_dto.getEffet(),
-                plante_dto.getChemin_vers_image()
+                plante_dto.getChemin_image()
         );
         return plante;
     }

@@ -62,7 +62,7 @@ public class Plante_DTO {
     public String getEffet() {
         return effet;
     }
-    public String getChemin_vers_image() {
+    public String getChemin_image() {
         return chemin_image;
     }
 
@@ -91,7 +91,7 @@ public class Plante_DTO {
     public void setEffet(String effet) {
         this.effet = effet;
     }
-    public void setChemin_vers_image(String chemin_image) {
+    public void setChemin_image(String chemin_image) {
         this.chemin_image = chemin_image;
     }
 

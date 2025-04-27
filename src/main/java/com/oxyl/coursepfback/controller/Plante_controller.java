@@ -45,7 +45,7 @@ public class Plante_controller {
                 || plante.getCout() <= 0 
                 || plante.getSoleil_par_seconde() <= 0 
                 || plante.getEffet() == null 
-                || plante.getChemin_vers_image() == null) {
+                || plante.getChemin_image() == null) {
                     return ResponseEntity.badRequest().build(); // HTTP 400
                 }
             }

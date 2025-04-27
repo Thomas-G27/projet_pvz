@@ -24,6 +24,7 @@ public class Map_DAO implements Map_DAO_interface {
 
     private final RowMapper<Map> mapRowMapper = (rs, rowNum) ->
         new Map(
+            rs.getInt("id_map"),
             rs.getInt("ligne"),
             rs.getInt("colonne"),
             rs.getString("chemin_image")

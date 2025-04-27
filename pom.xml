@@ -43,13 +43,6 @@
             <version>6.0.0</version> <!-- Assurez-vous que la version est compatible avec Jakarta EE -->
         </dependency>
 
-        <!-- Logging (optionnel, mais recommandé) -->
-        <!-- <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.4.14</version>   
-        </dependency> -->
-
         <!-- Jackson pour la manipulation de JSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

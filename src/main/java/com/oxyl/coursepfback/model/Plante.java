@@ -56,6 +56,9 @@ public class Plante {
     }
 
     //setters
+    public void setId(int id_plante) {
+        this.id_plante = id_plante;
+    }
     public void setNom(String nom) {
         this.nom = nom;
     }

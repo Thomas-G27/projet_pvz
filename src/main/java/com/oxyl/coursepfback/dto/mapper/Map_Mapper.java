@@ -7,9 +7,6 @@ public class Map_Mapper {
     
     // Conversion Map -> Map_DTO
     public static Map_DTO toDTO(Map map) {
-        if (map == null) {
-            return null;
-        }
         Map_DTO map_dto = new Map_DTO(
                 map.getId_map(),
                 map.getLigne(),
@@ -21,10 +18,8 @@ public class Map_Mapper {
 
     // Conversion Map_DTO -> Map
     public static Map toEntity(Map_DTO map_dto) {
-        if (map_dto == null) {
-            return null;
-        }
         Map map = new Map(
+                map_dto.getId_map(),
                 map_dto.getLigne(),
                 map_dto.getColonne(),
                 map_dto.getChemin_image()

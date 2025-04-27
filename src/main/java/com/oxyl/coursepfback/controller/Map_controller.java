@@ -66,8 +66,8 @@ public class Map_controller {
 
     @PutMapping("/{id}")
     public ResponseEntity<Map_DTO> modifierMap(@PathVariable("id") int id, @RequestBody Map_DTO map_dto) {
-        Map_DTO modif = this.mapService.modifierMap(id, map_dto);
-        return ResponseEntity.ok(modif); // HTTP 200
+        Map_DTO updatedMap = this.mapService.modifierMap(id, map_dto);
+        return ResponseEntity.ok(updatedMap); // HTTP 200
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> supprimerMap(@PathVariable("id") int id) {
