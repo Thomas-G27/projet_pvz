@@ -37,6 +37,14 @@ public class ZombieService implements Zombie_Service_interface{
         return zombie_dto;
     }
 
+    @Override
+    public Zombie_DTO modifierZombie(int id, @RequestBody Zombie_DTO zombie_dto) {
+        int modif = zombieDAO.modifierZombie(id, Zombie_Mapper.toEntity(zombie_dto));
+        if (modif == 0) {
+            return null; 
+        }
+        return zombie_dto;
+    }
     // @Override
     // public void supprimerZombie(Zombie zombie) {
     //     int id = zombie.getId_zombie();

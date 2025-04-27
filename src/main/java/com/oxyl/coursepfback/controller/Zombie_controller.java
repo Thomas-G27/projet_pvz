@@ -1,8 +1,10 @@
 package com.oxyl.coursepfback.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -60,6 +62,11 @@ public class Zombie_controller {
         return ResponseEntity.ok(New_Zombie); // HTTP 200
     }
     
+    @PutMapping("/{id}")
+    public ResponseEntity<Zombie_DTO> modifierZombie (@PathVariable("id") int id, @RequestBody Zombie_DTO zombie_dto){
+        Zombie_DTO updatedZombie = this.zombieService.modifierZombie(id, zombie_dto);
+        return ResponseEntity.ok(updatedZombie); // HTTP 200
+    }
     // @DeleteMapping("/{id}")
     // public void suprimerZombie (Zombie zombie){
     //     this.zombieService.supprimerZombie(zombie);

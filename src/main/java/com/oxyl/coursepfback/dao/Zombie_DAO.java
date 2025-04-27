@@ -57,15 +57,9 @@ public class Zombie_DAO implements Zombie_DAO_interface {
         }, keyHolder);
         return keyHolder.getKey().intValue();   // Retourne l'ID généré
     }
-///////////////////////////////////////////////////////////////////////////////////
-    @Override
-    public Zombie getZombieById(int id) {
-        String sql = "SELECT * FROM zombie WHERE id_zombie = ?";
-        return jdbcTemplate.queryForObject(sql, zombieRowMapper, id);
-    }
 
     @Override
-    public int updateZombie(Zombie zombie) {
+    public int modifierZombie(int id, Zombie zombie) {
         String sql = "UPDATE zombie SET nom = ?, point_de_vie = ?, attaque_par_seconde = ?, degat_attaque = ?, vitesse_de_deplacement = ?, chemin_image = ?, id_map = ? WHERE id_zombie = ?";
         return jdbcTemplate.update(sql, 
             zombie.getNom(),
@@ -75,9 +69,19 @@ public class Zombie_DAO implements Zombie_DAO_interface {
             zombie.getVitesse_de_deplacement(),
             zombie.getChemin_image(),
             zombie.getId_map(),
-            zombie.getId_zombie()
+            id
         );
+        // Retourne le nombre de lignes affectées, si 0, cela signifie que l'ID n'existe pas
     }
+
+///////////////////////////////////////////////////////////////////////////////////
+    @Override
+    public Zombie getZombieById(int id) {
+        String sql = "SELECT * FROM zombie WHERE id_zombie = ?";
+        return jdbcTemplate.queryForObject(sql, zombieRowMapper, id);
+    }
+
+    
 
     @Override
     public int deleteZombie(int id) {
