@@ -44,4 +44,9 @@ public class Plante_Service implements Plante_Service_interface {
         }
         return plante_dto;
     }
+
+    @Override
+    public void supprimerPlante(int id) {
+        planteDAO.supprimerPlante(id);
+    }
 }
