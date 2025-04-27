@@ -24,7 +24,7 @@ public class Plante_controller {
         this.planteService = planteServ;
     }
 
-    @GetMapping("/all")
+    @GetMapping("")
     public List<Plante_DTO> getallPlante (){
         return this.planteService.listerPlantes();
     }

@@ -7,7 +7,6 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.coursEpfBack.dao.interfaces.Plante_DAO_interface;
-import com.coursEpfBack.model.Effet;
 import com.coursEpfBack.model.Plante;
 
 @Repository
@@ -28,7 +27,7 @@ public class Plante_DAO implements Plante_DAO_interface {
             rs.getInt("degat_attaque"),
             rs.getInt("cout"),
             rs.getDouble("soleil_par_seconde"),
-            Effet.valueOf(rs.getString("effet")), 
+            rs.getString("effet"), 
             rs.getString("chemin_image")
         );
 

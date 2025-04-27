@@ -1,7 +1,5 @@
 package com.coursEpfBack.dto;
 
-import com.coursEpfBack.model.Effet;
-
 public class Plante_DTO {
     private int id;
     private String nom;
@@ -10,11 +8,11 @@ public class Plante_DTO {
     private int degat_attaque;
     private int cout;
     private double soleil_par_seconde;
-    private Effet effet;
+    private String effet;
     private String chemin_image;
 
     //constructeur
-    public Plante_DTO(int id, String nom, int point_de_vie, double attaque_par_seconde, int degat_attaque, int cout, double soleil_par_seconde, Effet effet, String chemin_image) {
+    public Plante_DTO(int id, String nom, int point_de_vie, double attaque_par_seconde, int degat_attaque, int cout, double soleil_par_seconde, String effet, String chemin_image) {
         this.id = id;
         this.nom = nom;
         this.point_de_vie = point_de_vie;
@@ -47,7 +45,7 @@ public class Plante_DTO {
     public double getSoleil_par_seconde() {
         return soleil_par_seconde;
     }
-    public Effet getEffet() {
+    public String getEffet() {
         return effet;
     }
     public String getChemin_vers_image() {
@@ -76,7 +74,7 @@ public class Plante_DTO {
     public void setSoleil_par_seconde(double soleil_par_seconde) {
         this.soleil_par_seconde = soleil_par_seconde;
     }
-    public void setEffet(Effet effet) {
+    public void setEffet(String effet) {
         this.effet = effet;
     }
     public void setChemin_vers_image(String chemin_image) {

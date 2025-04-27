@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@ComponentScan(basePackages = {"com.coursEpfBack.controller", "com.coursEpfBack.dao", "com.coursEpfBack.model", "com.coursEpfBack.services"})
+@ComponentScan(basePackages = {"com.coursEpfBack.controller", "com.coursEpfBack.dao", "com.coursEpfBack.model", "com.coursEpfBack.services", "com.coursEpfBack.dto", "com.coursEpfBack.dto.mapper"})
 public class AppConfig implements WebMvcConfigurer {
 
     @Override

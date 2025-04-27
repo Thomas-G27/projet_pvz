@@ -57,7 +57,11 @@
             <version>2.18.2</version>
         </dependency>
 
-
+        <dependency> 
+            <groupId>javax.persistence</groupId> 
+            <artifactId>javax.persistence-api</artifactId> 
+            <version>2.2</version> 
+        </dependency>
         <!-- Non nécessaire initialement (dessous)-->
         <!-- Dépendances de test (JUnit et Mockito) -->
         <dependency>

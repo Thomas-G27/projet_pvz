@@ -1,5 +1,8 @@
 package com.coursEpfBack.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Plante {
     //attributs
     private int id_plante;
@@ -9,11 +12,11 @@ public class Plante {
     private int degat_attaque;
     private int cout;
     private double soleil_par_seconde;
-    private Effet effet;
+    private String effet;
     private String chemin_image;
 
     //constructeur
-    public Plante (int id_plante, String nom, int pdv, double attaque, int degat, int cout, double soleil, Effet effet, String chemin_img){
+    public Plante (int id_plante, String nom, int pdv, double attaque, int degat, int cout, double soleil, String effet, String chemin_img){
         this.id_plante = id_plante;
         this.nom = nom ;
         this.point_de_vie = pdv ;
@@ -47,7 +50,7 @@ public class Plante {
     public double getSoleil_par_seconde() {
         return soleil_par_seconde;
     }
-    public Effet getEffet() {
+    public String getEffet() {
         return effet;
     }
     public String getChemin_image() {
@@ -73,7 +76,7 @@ public class Plante {
     public void setSoleil_par_seconde(double soleil_par_seconde) {
         this.soleil_par_seconde = soleil_par_seconde;
     }
-    public void setEffet(Effet effet) {
+    public void setEffet(String effet) {
         this.effet = effet;
     }
     public void setChemin_image(String chemin_image) {
