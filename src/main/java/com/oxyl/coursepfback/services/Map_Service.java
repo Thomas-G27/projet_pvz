@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.oxyl.coursepfback.dao.interfaces.Map_DAO_interface;
+import com.oxyl.coursepfback.dao.interfaces.Zombie_DAO_interface;
 import com.oxyl.coursepfback.model.Map;
 import com.oxyl.coursepfback.services.interfaces.Map_Service_interface;
 import com.oxyl.coursepfback.dto.Map_DTO;
@@ -15,10 +16,12 @@ import com.oxyl.coursepfback.dto.mapper.Map_Mapper;
 public class Map_Service implements Map_Service_interface {
 
     private final Map_DAO_interface mapDAO;
+    private final Zombie_DAO_interface zombieDAO;
 
     @Autowired
-    public Map_Service(Map_DAO_interface mapDAO) {
+    public Map_Service(Map_DAO_interface mapDAO, Zombie_DAO_interface zombieDAO) {
         this.mapDAO = mapDAO;
+        this.zombieDAO = zombieDAO;
     }
 
     @Override
@@ -47,13 +50,16 @@ public class Map_Service implements Map_Service_interface {
     
     @Override
     public void supprimerMap(int id) {
-        mapDAO.deleteMap(id);
+        // Supprimer les zombies associés à la map avant de supprimer la map elle-même
+        zombieDAO.supprimerZombieParIdMap(id);
+        // Supprimer la map ensuite
+        mapDAO.supprimerMap(id);
     }
 
-    @Override
-    public Map trouverMap(int id) {
-        return mapDAO.getMapById(id);
-    }
+    // @Override
+    // public Map_DTO trouverMap(int id) {
+    //     return mapDAO.getMapById(id);
+    // }
 
     
 }

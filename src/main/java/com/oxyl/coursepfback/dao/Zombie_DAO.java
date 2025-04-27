@@ -74,6 +74,16 @@ public class Zombie_DAO implements Zombie_DAO_interface {
         // Retourne le nombre de lignes affectées, si 0, cela signifie que l'ID n'existe pas
     }
 
+    @Override
+    public int supprimerZombie(int id) {
+        String sql = "DELETE FROM zombie WHERE id_zombie = ?";
+        return jdbcTemplate.update(sql, id);
+    }
+    @Override
+    public int supprimerZombieParIdMap(int id_map) {
+        String sql = "DELETE FROM zombie WHERE id_map = ?";
+        return jdbcTemplate.update(sql, id_map);
+    }
 ///////////////////////////////////////////////////////////////////////////////////
     @Override
     public Zombie getZombieById(int id) {
@@ -83,9 +93,4 @@ public class Zombie_DAO implements Zombie_DAO_interface {
 
     
 
-    @Override
-    public int deleteZombie(int id) {
-        String sql = "DELETE FROM zombie WHERE id_zombie = ?";
-        return jdbcTemplate.update(sql, id);
-    }
 }

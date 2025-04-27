@@ -36,7 +36,7 @@ public class Map_controller {
                 if (map.getId_map() <= 0
                 || map.getLigne() <= 0
                 || map.getColonne() <= 0
-                || map.getChemin_image() == null) {
+                || map.getChemin_image() == null || map.getChemin_image().isEmpty()) {
                     return ResponseEntity.badRequest().build(); // HTTP 400
                 }
             }
@@ -64,8 +64,9 @@ public class Map_controller {
         }
         return ResponseEntity.ok(modif); // HTTP 200
     }
-    // @DeleteMapping("/{id}")
-    // public void supprimerMap(int id) {
-    //     this.mapService.supprimerMap(id);
-    // }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> supprimerMap(@PathVariable("id") int id) {
+        this.mapService.supprimerMap(id);
+        return ResponseEntity.noContent().build(); // HTTP 204
+    }
 }

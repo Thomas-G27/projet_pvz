@@ -77,8 +77,8 @@ public class Plante_DAO implements Plante_DAO_interface {
     }
 
     @Override
-    public void supprimerPlante(int id) {
+    public int supprimerPlante(int id) {
         String sql = "DELETE FROM plante WHERE id_plante = ?";
-        jdbcTemplate.update(sql, id);
+        return jdbcTemplate.update(sql, id);
     }
 }

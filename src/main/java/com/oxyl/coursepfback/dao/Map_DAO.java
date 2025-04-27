@@ -70,7 +70,7 @@ public class Map_DAO implements Map_DAO_interface {
 
 
     @Override
-    public int deleteMap(int id) {
+    public int supprimerMap(int id) {
         String sql = "DELETE FROM map WHERE id_map = ?";
         return jdbcTemplate.update(sql, id);
     }
