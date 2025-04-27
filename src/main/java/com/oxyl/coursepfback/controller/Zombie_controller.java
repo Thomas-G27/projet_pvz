@@ -13,7 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.oxyl.coursepfback.dto.Zombie_DTO;
-import com.oxyl.coursepfback.services.ZombieService;
+import com.oxyl.coursepfback.services.Zombie_Service;
 
 import java.util.List;
 
@@ -23,10 +23,10 @@ import java.util.List;
 @RestController
 public class Zombie_controller {
 
-    private final ZombieService zombieService;
+    private final Zombie_Service zombieService;
     
     @Autowired
-    public Zombie_controller (ZombieService zombieServ){
+    public Zombie_controller (Zombie_Service zombieServ){
         this.zombieService = zombieServ;
     }
     
@@ -67,8 +67,10 @@ public class Zombie_controller {
         Zombie_DTO updatedZombie = this.zombieService.modifierZombie(id, zombie_dto);
         return ResponseEntity.ok(updatedZombie); // HTTP 200
     }
-    // @DeleteMapping("/{id}")
-    // public void suprimerZombie (Zombie zombie){
-    //     this.zombieService.supprimerZombie(zombie);
-    // }
+    
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> supprimerZombie(@PathVariable("id") int id) {
+        this.zombieService.supprimerZombie(id);
+        return ResponseEntity.noContent().build(); // HTTP 204
+    }
 }

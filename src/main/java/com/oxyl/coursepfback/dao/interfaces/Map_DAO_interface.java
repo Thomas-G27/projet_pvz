@@ -8,10 +8,9 @@ public interface Map_DAO_interface {
     List<Map> getAllMaps();
     int ajouterMap(Map map);
     int modifierMap(int id, Map map);
-
+    int supprimerMap(int id);
 
     
     Map getMapById(int id);
-    int deleteMap(int id);
 
 }
