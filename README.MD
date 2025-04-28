@@ -64,7 +64,7 @@ Elle se sépare clairement :
 - `PUT /plantes/{id}`, `PUT /zombies/{id}`, `PUT /maps/{id}`
 - `DELETE /plantes/{id}`, `DELETE /zombies/{id}`, `DELETE /maps/{id}`
 
-Les Endpoints sont testé via les fonctions test des controller
+Les Endpoints sont testé via le frontend fourni
 
 ---
 
