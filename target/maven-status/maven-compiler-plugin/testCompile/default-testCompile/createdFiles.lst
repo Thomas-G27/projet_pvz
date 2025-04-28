@@ -1,6 +1,6 @@
-com\oxyl\coursepfback\dao\Plante_DaoTest.class
 com\oxyl\coursepfback\services\Map_ServiceTest.class
 com\oxyl\coursepfback\services\Plante_ServiceTest.class
 com\oxyl\coursepfback\dao\Map_DaoTest.class
 com\oxyl\coursepfback\dao\Zombie_DaoTest.class
 com\oxyl\coursepfback\services\Zombie_ServiceTest.class
+com\oxyl\coursepfback\dao\Plante_DaoTest.class
