@@ -76,6 +76,13 @@ Les Endpoints sont testé via les fonctions test des controller
 
 ---
 
+## Points d'attention
+
+- Une "incompatibilité" avec le front a lieu sur la page de gestion des plantes. Bien que les plantes ne posent aucun problème sur les endpoints ou dans le jeu, je n'ai pas trouver de solution a ce problème, Zombie fonctionne parfaitement avec une structure identique.
+- Un point similaire est à noté sur la création de map depuis l'appli (les endpoints fonctionnent). Également lors de la partie, la map n'apparait pas
+
+---
+
 ## 📅 Plan d'évolution
 
 - Ajout d'une vérification d'entrée (validation DTO)

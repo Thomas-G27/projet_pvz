@@ -61,7 +61,12 @@ public class Zombie_DAO implements Zombie_DAO_interface {
             ps.setInt(7, zombie.getId_map());
             return ps;
         }, keyHolder);
-        return keyHolder.getKey().intValue();   // Retourne l'ID généré
+        if (keyHolder.getKey() != null) {
+            return keyHolder.getKey().intValue();   // Retourne l'ID généré
+        } else {
+            return 0; // En cas d'erreur, retourne 0
+        }
+        
     }
 
     @Override

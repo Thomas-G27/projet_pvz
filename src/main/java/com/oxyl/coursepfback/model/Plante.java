@@ -14,6 +14,18 @@ public class Plante {
     private String chemin_image;
 
     //constructeur
+    public Plante() {
+    }
+    public Plante (String nom, int pdv, double attaque, int degat, int cout, double soleil, String effet, String chemin_img){
+        this.nom = nom ;
+        this.point_de_vie = pdv ;
+        this.attaque_par_seconde = attaque ;
+        this.degat_attaque = degat ;
+        this.cout = cout ;
+        this.soleil_par_seconde = soleil ;
+        this.effet = effet ;
+        this.chemin_image = chemin_img;
+    }
     public Plante (int id_plante, String nom, int pdv, double attaque, int degat, int cout, double soleil, String effet, String chemin_img){
         this.id_plante = id_plante;
         this.nom = nom ;
